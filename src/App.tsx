@@ -38,7 +38,7 @@ function App() {
             <div className="absolute bg-gradient-to-r from-green-400 w-full">
               <h1
                 className="text-white text-center text-3xl p-4 font-black"
-              >AGENDA TUS CALORIAS</h1>
+              >ESTABLECE EL CONSUMO CALORIAS</h1>
             </div>
             <img
               className="w-full h-full object-cover rounded-lg"
