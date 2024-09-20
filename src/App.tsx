@@ -44,10 +44,7 @@ function App() {
               src={url_img}
               alt="Calorias" />
           </div>
-          <Form
-            dispatch={dispatch}
-            state={state}
-          />
+          <Form />
         </section>
 
         <section className="bg-gray-800 py-10">
