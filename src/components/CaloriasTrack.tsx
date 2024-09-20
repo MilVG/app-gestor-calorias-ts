@@ -1,4 +1,3 @@
-import { useMemo } from "react"
 import CaloriasDisplay from "./CaloriasDisplay"
 import { useActividad } from "../hooks/useActividad"
 
@@ -6,15 +5,8 @@ import { useActividad } from "../hooks/useActividad"
 
 export default function CaloriasTrack() {
 
-  const { state } = useActividad()
+  const { caloriasConsumidas, caloriasQuemadas, totalCalorias } = useActividad()
 
-  const { actividad } = state
-  const caloriasConsumidas = useMemo(() => actividad.reduce((total, actv) => actv.categoriasel === 1 ? total +
-    actv.calorias : total, 0), [actividad])
-  const caloriasQuemadas = useMemo(() => actividad.reduce((total, actv) => actv.categoriasel === 2 ? total +
-    actv.calorias : total, 0), [actividad])
-
-  const totalCalorias = useMemo(() => caloriasConsumidas - caloriasQuemadas, [actividad])
 
   return (
     <>
