@@ -57,10 +57,7 @@ function App() {
         </section>
 
         <section className=" mx-auto py-5  max-w-4xl rounded-lg">
-          <ActividadesList
-            actividad={state.actividad}
-            dispatch={dispatch}
-          />
+          <ActividadesList />
         </section>
       </div>
     </>
