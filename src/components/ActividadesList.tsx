@@ -1,20 +1,11 @@
-import { Dispatch, useMemo } from "react"
-
 import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/outline"
+import { useActividad } from "../hooks/useActividad"
 
-// import { categorias } from "../data"
-import { Atv } from "../types"
-import { categorias } from "../data"
-import { ActividadAcciones } from "../reducers/actividad-Reducer"
+function ActividadesList() {
 
-type actividadesprops = {
-  actividad: Atv[],
-  dispatch: Dispatch<ActividadAcciones>
-}
-function ActividadesList({ actividad, dispatch }: actividadesprops) {
+  const { state, dispatch, nombreCategoria, actividadesComprobacion } = useActividad()
+  const { actividad } = state
 
-  const nombreCategoria = useMemo(() => (categoria: Atv['categoriasel']) => categorias.map(cat => cat.id === categoria ? cat.name : ''), [actividad])
-  const actividadesComprobacion = useMemo(() => actividad.length === 0, [actividad])
   return (
     <>
 
