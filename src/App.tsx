@@ -1,15 +1,14 @@
-import { useEffect, useMemo, useReducer } from "react"
+import { useEffect, useMemo } from "react"
 import Form from "./components/Form"
-import { actividadReducer, initialState } from "./reducers/actividad-Reducer"
 import ActividadesList from "./components/ActividadesList"
 import CaloriasTrack from "./components/CaloriasTrack"
-
+import { useActividad } from "./hooks/useActividad"
 
 function App() {
 
   const url_img = "https://img.freepik.com/foto-gratis/menu-saludable-receta-dieta-alimentaria_53876-122837.jpg?t=st=1722312707~exp=1722316307~hmac=92fdcaf1c6a37b9e169d644374fd9bdaeb83a1f77142eca8f1f456a7b4ba3cb9&w=900"
 
-  const [state, dispatch] = useReducer(actividadReducer, initialState)
+  const { state, dispatch } = useActividad()
 
   useEffect(() => {
     localStorage.setItem('actividad', JSON.stringify(state.actividad))
